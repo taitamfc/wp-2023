@@ -3,3 +3,4 @@
 include_once WP2023_PATH.'includes/post_types.php';
 
 // Tạo metabox
+include_once WP2023_PATH.'includes/metaboxes.php';
