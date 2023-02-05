@@ -28,3 +28,4 @@ register_deactivation_hook( __FILE__, 'wp2023_ecommerce_deactivate' );
 function wp2023_ecommerce_deactivate(){
 
 }
+include_once WP2023_PATH.'includes/includes.php';
