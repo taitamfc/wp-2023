@@ -22,3 +22,6 @@ include_once WP2023_PATH.'includes/classes/Wp2023Order.php';
 
 //Sử dụng ajax trong wordpress
 include_once WP2023_PATH.'includes/ajaxs.php';
+
+//Viết api cho wordpress
+include_once WP2023_PATH.'includes/apis.php';

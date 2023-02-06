@@ -69,13 +69,21 @@
             return $item;
         }
         public function store($data){
-            
+            global $wpdb;
+            $wpdb->insert($this->_orders,$data);
+            $insert_id = $wpdb->insert_id;
+            return $this->find($insert_id);
         }
         public function update($id,$data){
-            
+            global $wpdb;
+            $wpdb->update( $this->_orders, $data, [
+                'id' => $id
+            ]);
+            return $this->find($id);
         }
         public function destroy($id){
-            
+            global $wpdb;
+            return $wpdb->delete( $this->_orders, ['id' => $id] );
         }
         public function trash($id){
             global $wpdb;
