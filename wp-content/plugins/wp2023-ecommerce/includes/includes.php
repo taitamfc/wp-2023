@@ -1,4 +1,7 @@
 <?php
+// Khai báo các functions hỗ trợ
+include_once WP2023_PATH.'includes/functions.php';
+
 // Đăng ký post_types
 include_once WP2023_PATH.'includes/post_types.php';
 
@@ -13,3 +16,6 @@ include_once WP2023_PATH.'includes/admin_menus.php';
 
 // Tạo trang cấu hình
 include_once WP2023_PATH.'includes/admin_settings.php';
+
+//Tạo trang quản lý đơn hàng
+include_once WP2023_PATH.'includes/classes/Wp2023Order.php';
