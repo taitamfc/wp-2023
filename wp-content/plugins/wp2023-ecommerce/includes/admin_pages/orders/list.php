@@ -76,7 +76,13 @@
                     <td><?= number_format($item->total);?></td>
                     <td><?= $item->customer_name;?></td>
                     <td><?= $item->customer_phone;?></td>
-                    <td><?= $item->status;?></td>
+                    <td>
+                        <select name="" id="" class="order_status" data-order_id="<?= $item->id;?>">
+                            <option <?= $item->status == 'pending' ? 'selected' : ''; ?> value="pending">Đơn hàng mới</option>
+                            <option <?= $item->status == 'completed' ? 'selected' : ''; ?> value="completed">Đơn đã hoàn thành</option>
+                            <option <?= $item->status == 'canceled' ? 'selected' : ''; ?> value="canceled">Đơn đã hủy</option>
+                        </select>
+                    </td>
                     <td class="date column-date" ><?= $item->created;?></td>
                 </tr>
                 <?php endforeach;?>
@@ -112,3 +118,33 @@
         </div>
         </form>
 </div>
+
+<script>
+    let ajax_url = '<?= admin_url('admin-ajax.php');?>';
+    jQuery( document ).ready( function(){
+        jQuery('.order_status').on('change',function(){
+            let order_id = jQuery(this).data('order_id');
+            let status   = jQuery(this).val();
+
+            console.log(order_id,status);
+            jQuery.ajax({
+                url: ajax_url,
+                dataType: 'json',
+                method: 'POST',
+                data: {
+                    action: 'wp2023_order_change_status',
+                    order_id: order_id,
+                    status: status
+                },
+                success: function(data){
+                    if( data.success ){
+                        alert('Cập nhật thành công !');
+                    }
+                },
+                error: function(error){
+
+                }
+            });
+        });
+    });
+</script>

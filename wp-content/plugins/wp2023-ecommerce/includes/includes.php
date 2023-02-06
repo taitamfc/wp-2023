@@ -19,3 +19,6 @@ include_once WP2023_PATH.'includes/admin_settings.php';
 
 //Tạo trang quản lý đơn hàng
 include_once WP2023_PATH.'includes/classes/Wp2023Order.php';
+
+//Sử dụng ajax trong wordpress
+include_once WP2023_PATH.'includes/ajaxs.php';

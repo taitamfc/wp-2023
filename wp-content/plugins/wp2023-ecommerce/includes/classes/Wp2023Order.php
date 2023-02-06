@@ -85,6 +85,14 @@
                 'id' => $id
             ] );
         }
+        public function change_status($id,$status){
+            global $wpdb;
+            $wpdb->update( $this->_orders, [
+                'status' => $status
+            ], [
+                'id' => $id
+            ] );
+        }
 
         public function order_items($order_id){
             global $wpdb;
