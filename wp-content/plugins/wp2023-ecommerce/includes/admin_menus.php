@@ -43,8 +43,8 @@ function wporg_options_page() {
 
     add_submenu_page(
         'wp2023',
-        'Manage Setting',
-        'Manage Setting',
+        'Cấu hình',
+        'Cấu hình',
         'manage_options',
         'wp2023-settings',
         'wp2023_admin_page_settings',
@@ -60,5 +60,5 @@ function wp2023_admin_page_orders(){
 }
 
 function wp2023_admin_page_settings(){
-    echo 'wp2023_admin_page_settings';
+    include_once WP2023_PATH.'includes/admin_pages/settings.php';
 }

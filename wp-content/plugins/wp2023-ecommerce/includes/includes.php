@@ -10,3 +10,6 @@ include_once WP2023_PATH.'includes/admin_columns.php';
 
 // Tạo menu trong admin
 include_once WP2023_PATH.'includes/admin_menus.php';
+
+// Tạo trang cấu hình
+include_once WP2023_PATH.'includes/admin_settings.php';
