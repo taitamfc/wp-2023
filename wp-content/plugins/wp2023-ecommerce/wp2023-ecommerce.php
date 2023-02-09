@@ -18,9 +18,23 @@
 define('WP2023_PATH', plugin_dir_path(__FILE__) );
 define('WP2023_URI', plugin_dir_url(__FILE__) );
 
+// Tải file ngôn ngữ
+add_action( 'init', 'wp2023_load_textdomain' );
+function wp2023_load_textdomain() {
+	load_plugin_textdomain( 'wp2023-ecommerce', false, WP2023_PATH . 'languages' ); 
+}
+
+function wp2023_load_textdomain_mofile( $mofile, $domain ) {
+	if ( 'wp2023-ecommerce' === $domain && false !== strpos( $mofile, WP_LANG_DIR . '/plugins/' ) ) {
+		$locale = apply_filters( 'plugin_locale', determine_locale(), $domain );
+        $mofile = WP2023_PATH . '/languages/' . $domain . '-' . $locale . '.mo';
+	}
+	return $mofile;
+}
+add_filter( 'load_textdomain_mofile', 'wp2023_load_textdomain_mofile', 10, 2 );
 // Định nghĩa hành động khi plugin được bật
 register_activation_hook( __FILE__, 'wp2023_ecommerce_active' );
-function wp2023_ecommerce_active(){
+function c_ecommerce_active(){
     // Kiểm tra đã cài CSDL chưa
     $actived = get_option('wp2023_ecommerce_active');
     if(!$actived){

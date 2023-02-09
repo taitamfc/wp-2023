@@ -8,21 +8,21 @@
     extract($data);
 ?>
 <div class="wrap">
-    <h1 class="wp-heading-inline">Quản lý đơn hàng</h1>
+    <h1 class="wp-heading-inline"><?= __('Manage orders','wp2023-ecommerce');?></h1>
     <hr class="wp-header-end">
     <ul class="subsubsub">
-        <li class="all"><a href="admin.php?page=wp2023-orders" class="current">Tất cả <span class="count">(<?= $total_items?>)</span></a> |</li>
-        <li class="publish"><a href="admin.php?page=wp2023-orders&status=pending">Đơn hàng mới</a> |</li>
-        <li class="publish"><a href="admin.php?page=wp2023-orders&status=completed">Đơn hàng đã hoàn thành</a> |</li>
-        <li class="publish"><a href="admin.php?page=wp2023-orders&status=canceled">Đơn hàng đã hủy</a></li>
+        <li class="all"><a href="admin.php?page=wp2023-orders" class="current"><?= __('All','wp2023-ecommerce');?><span class="count">(<?= $total_items?>)</span></a> |</li>
+        <li class="publish"><a href="admin.php?page=wp2023-orders&status=pending"><?= __('New orders','wp2023-ecommerce');?></a> |</li>
+        <li class="publish"><a href="admin.php?page=wp2023-orders&status=completed"><?= __('Completed orders','wp2023-ecommerce');?></a> |</li>
+        <li class="publish"><a href="admin.php?page=wp2023-orders&status=canceled"><?= __('Canceled orders','wp2023-ecommerce');?></a></li>
     </ul>
     <form id="posts-filter" method="get">
         <input type="hidden" name="page" value="wp2023-orders">
         <input type="hidden" name="paged" value="<?= $paged; ?>">
         <p class="search-box">
-            <label class="screen-reader-text" for="post-search-input">Tìm các bài viết:</label>
+            <label class="screen-reader-text" for="post-search-input"><?= __('Search orders','wp2023-ecommerce');?>:</label>
             <input type="search" id="post-search-input" name="s" value="<?= $s; ?>">
-            <input type="submit" id="search-submit" class="button" value="Tìm các bài viết">
+            <input type="submit" id="search-submit" class="button" value="<?= __('Search orders','wp2023-ecommerce');?>">
         </p>
         <div class="tablenav top">
             <div class="alignleft actions bulkactions">
