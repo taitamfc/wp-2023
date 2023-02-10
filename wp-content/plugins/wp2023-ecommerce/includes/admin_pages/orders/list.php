@@ -120,6 +120,7 @@
 </div>
 
 <script>
+    let nonce = '<?= wp_create_nonce("wp2023_order_status");?>';
     let ajax_url = '<?= admin_url('admin-ajax.php');?>';
     jQuery( document ).ready( function(){
         jQuery('.order_status').on('change',function(){
@@ -134,7 +135,8 @@
                 data: {
                     action: 'wp2023_order_change_status',
                     order_id: order_id,
-                    status: status
+                    status: status,
+                    nonce: nonce,
                 },
                 success: function(data){
                     if( data.success ){

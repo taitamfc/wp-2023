@@ -34,7 +34,7 @@ function wp2023_load_textdomain_mofile( $mofile, $domain ) {
 add_filter( 'load_textdomain_mofile', 'wp2023_load_textdomain_mofile', 10, 2 );
 // Định nghĩa hành động khi plugin được bật
 register_activation_hook( __FILE__, 'wp2023_ecommerce_active' );
-function c_ecommerce_active(){
+function wp2023_ecommerce_active(){
     // Kiểm tra đã cài CSDL chưa
     $actived = get_option('wp2023_ecommerce_active');
     if(!$actived){
