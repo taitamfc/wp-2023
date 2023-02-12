@@ -4,3 +4,23 @@
 .sub-menu {
     display: none;
 }
+.page-numbers {
+    display: inline-block;
+    min-width: 30px;
+    width: auto !important;
+    height: 30px;
+    border: 1px solid #b2b2b2;
+    font-size: 14px;
+    color: #b2b2b2;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    margin-right: 16px;
+    -webkit-transition: all, 0.3s;
+    -moz-transition: all, 0.3s;
+    -ms-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    transition: all, 0.3s;
+    padding-left: 5px;
+    padding-right: 5px;
+}
