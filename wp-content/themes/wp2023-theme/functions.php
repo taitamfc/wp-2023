@@ -10,14 +10,20 @@ add_action( 'after_setup_theme', $theme_prefix.'_theme_support' );
 add_action( 'wp_enqueue_scripts', $theme_prefix.'_register_styles' );
 //Đăng ký javascript
 add_action( 'wp_enqueue_scripts', $theme_prefix.'_register_scripts' );
-//Đăng ký menu
+
 
 //Đăng ký widget
 
 //Cấu hình theme
 
 function wp2023_theme_theme_support(){
-	
+    // Đăng ký các vị trí menu
+	register_nav_menus(
+        array(
+            'primary' => esc_html__( 'Primary menu', 'wp2023-theme' ),
+            'footer'  => esc_html__( 'Social menu', 'wp2023-theme' ),
+        )
+    );
 }
 function wp2023_theme_register_styles(){
     global $theme_prefix,$theme_uri,$theme_version;
