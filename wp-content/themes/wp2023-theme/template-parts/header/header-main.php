@@ -1,3 +1,4 @@
+<?php global $theme_prefix,$theme_uri;?>
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
