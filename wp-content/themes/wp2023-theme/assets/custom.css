@@ -24,3 +24,6 @@
     padding-left: 5px;
     padding-right: 5px;
 }
+.post-term, .post-term:hover {
+    color: #6f6f6f;
+}

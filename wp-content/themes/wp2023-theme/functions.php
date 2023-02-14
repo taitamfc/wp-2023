@@ -11,3 +11,11 @@ include_once $theme_dir.'/inc/theme_support.php';
 include_once $theme_dir.'/inc/scripts.php';
 //Đăng ký widget
 include_once $theme_dir.'/inc/widgets.php';
+
+if( !function_exists('dd') ){
+    function dd( $data ){
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+    }
+}
