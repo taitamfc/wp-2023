@@ -27,3 +27,6 @@
 .post-term, .post-term:hover {
     color: #6f6f6f;
 }
+.footer__widget{
+    margin-bottom: 0;
+}
