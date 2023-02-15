@@ -10,6 +10,7 @@ function wp2023_theme_theme_support(){
         array(
             'primary' => esc_html__( 'Primary menu', 'wp2023-theme' ),
             'footer'  => esc_html__( 'Social menu', 'wp2023-theme' ),
+            'vertical'  => esc_html__( 'Vertical menu', 'wp2023-theme' ),
         )
     );
     // Logo

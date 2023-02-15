@@ -1,4 +1,11 @@
-<section class="hero hero-normal">
+<?php
+global $theme_uri;
+$hero_class = 'hero-normal';
+if( is_front_page() ){
+    $hero_class = '';
+}
+?>
+<section class="hero <?= $hero_class; ?>">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -7,19 +14,19 @@
                         <i class="fa fa-bars"></i>
                         <span>All departments</span>
                     </div>
-                    <ul>
-                        <li><a href="#">Fresh Meat</a></li>
-                        <li><a href="#">Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
-                    </ul>
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'container'       => false,
+                            'theme_location'  => 'vertical',
+                            'menu_class'      => 'menu-vertical',
+                            'container_class' => '',
+                            'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+                            'fallback_cb'     => false,
+                        )
+                    );
+                    ?>
+                    
                 </div>
             </div>
             <div class="col-lg-9">
@@ -44,6 +51,16 @@
                         </div>
                     </div>
                 </div>
+                <?php if( is_front_page() ):?>
+                <div class="hero__item set-bg" data-setbg="<?= $theme_uri; ?>/assets/img/hero/banner.jpg">
+                    <div class="hero__text">
+                        <span>FRUIT FRESH</span>
+                        <h2>Vegetable <br />100% Organic</h2>
+                        <p>Free Pickup and Delivery Available</p>
+                        <a href="#" class="primary-btn">SHOP NOW</a>
+                    </div>
+                </div>
+                <?php endif;?>
             </div>
         </div>
     </div>

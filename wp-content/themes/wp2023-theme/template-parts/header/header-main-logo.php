@@ -1,4 +1,9 @@
-<?php global $theme_uri;?>
+<?php 
+global $theme_uri;
+$custom_logo = get_theme_mod('custom_logo');
+?>
 <div class="header__logo">
-    <a href="./index.html"><img src="<?= $theme_uri; ?>/assets/img/logo.png" alt=""></a>
+    <a href="<?= home_url();?>">
+        <img src="<?= wp_get_attachment_image_url($custom_logo); ?>" alt="">
+    </a>
 </div>
