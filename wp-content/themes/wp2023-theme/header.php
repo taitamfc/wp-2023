@@ -1,3 +1,8 @@
+<?php
+$custom_logo                = get_theme_mod('custom_logo');
+$header__top__left          = get_theme_mod('header__top__left');
+$header__top__right__social = get_theme_mod('header__top__right__social');
+?>
 <?php global $theme_prefix,$theme_uri;?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -17,14 +22,12 @@
     <div class="humberger__menu__overlay"></div>
     <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="<?= $theme_uri; ?>/assets/img/logo.png" alt=""></a>
+            <a href="<?= home_url();?>">
+                <img src="<?= wp_get_attachment_image_url($custom_logo); ?>" alt="">
+            </a>
         </div>
         <div class="humberger__menu__cart">
-            <ul>
-                <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
-            </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <?php echo do_shortcode('[header__cart show_wishlist=0]'); ?>
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__language">

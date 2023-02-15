@@ -11,6 +11,8 @@ include_once $theme_dir.'/inc/theme_support.php';
 include_once $theme_dir.'/inc/scripts.php';
 //Đăng ký widget
 include_once $theme_dir.'/inc/widgets.php';
+//Đăng ký shortcode cho theme
+include_once $theme_dir.'/inc/shortcodes.php';
 
 if( !function_exists('dd') ){
     function dd( $data ){
