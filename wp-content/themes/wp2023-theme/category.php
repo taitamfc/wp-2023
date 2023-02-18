@@ -12,7 +12,7 @@
                             <?php while ( have_posts() ) : ?>
                             <?php the_post(); ?>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <?php get_template_part( 'template-parts/post/content' ); ?>
+                                    <?php get_template_part( 'template-parts/post/content',null,['post_id'=> get_the_id() ] ); ?>
                                 </div>
                             <?php endwhile;?>
                         <?php else: ?>
