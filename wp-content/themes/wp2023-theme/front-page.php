@@ -14,7 +14,7 @@
     <!-- Banner End -->
 
     <!-- Latest Product Section Begin -->
-    <?php get_template_part( 'template-parts/home/latest_product' ); ?>
+    <?php //get_template_part( 'template-parts/home/latest_product' ); ?>
     <!-- Latest Product Section End -->
 
     <!-- Blog Section Begin -->
