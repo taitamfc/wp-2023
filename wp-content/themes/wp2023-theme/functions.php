@@ -14,6 +14,9 @@ include_once $theme_dir.'/inc/widgets.php';
 //Đăng ký shortcode cho theme
 include_once $theme_dir.'/inc/shortcodes.php';
 
+//Đăng ký search cho theme
+include_once $theme_dir.'/ecommerce/inc/search.php';
+
 if( !function_exists('dd') ){
     function dd( $data ){
         echo '<pre>';
